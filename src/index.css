@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fadebg: #fcfcfc;
+  --color-fadepurple: #f8eaff;
+  --color-mainpurple: #61227d;
+  --color-maindark: #5E5E5E;
+  --color-littledark: #F7F7F7;
+}
+
+

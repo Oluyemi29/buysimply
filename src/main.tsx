@@ -9,7 +9,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Toaster />
-      <div className="bg-fadebg">
+      <div className="bg-fadebg overflow-x-hidden w-full">
         <App />
       </div>
     </BrowserRouter>

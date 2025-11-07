@@ -8,8 +8,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 const LoanComponent = () => {
   const [searchParams] = useSearchParams();
   const status = searchParams.get("status");
-  const { userData, LogOut, GetAllLoan, DeleteLoan } = userAuth();
-  const [allLoans, setAllLoans] = useState<LoanDataProps[]>([]);
+  const { userData, LogOut, GetAllLoan, DeleteLoan, loanData } = userAuth();
+  const [allLoans, setAllLoans] = useState<LoanDataProps[]>(loanData);
   const navigate = useNavigate();
   const userId = userData?.id as number;
   const userRole = userData?.role;

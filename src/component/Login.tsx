@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
   const navigate = useNavigate();
-  const { Login } = userAuth();
+  const { Login, GetAllLoan, CheckActive } = userAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   type FormSchemaType = z.infer<typeof FormSchema>;
@@ -30,6 +30,8 @@ const LoginComponent = () => {
       const response = await Login(email, password);
       if (response) {
         console.log(email, password);
+        CheckActive();
+        GetAllLoan();
         return navigate("/loan");
       }
     } catch (error) {

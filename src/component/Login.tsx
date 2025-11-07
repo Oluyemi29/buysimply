@@ -41,7 +41,7 @@ const LoginComponent = () => {
   };
   return (
     <div className="flex flex-row w-full bg-fadebg h-screen">
-      <div className="bg-fadepurple w-full flex flex-col justify-center px-10">
+      <div className="bg-fadepurple w-full md:flex hidden flex-col justify-center px-10">
         <img src="/logo.png" alt="logo" width={20} className="w-20" />
         <img
           src="/people.png"

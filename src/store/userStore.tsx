@@ -9,13 +9,11 @@ const userAuth = create<UserAuthProps>((set) => ({
   isCheckingActive: false,
   Login: async (email, password) => {
     const API = import.meta.env.VITE_BACKEND_URL as string;
-    const API_KEY = import.meta.env.VITE_API_KEY as string;
 
     const request = await fetch(`${API}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "api-key": `${API_KEY}`,
       },
       credentials: "include",
       body: JSON.stringify({ email, password }),
@@ -105,12 +103,10 @@ const userAuth = create<UserAuthProps>((set) => ({
   loanData: [],
   GetAllLoan: async () => {
     const API = import.meta.env.VITE_BACKEND_URL as string;
-    const API_KEY = import.meta.env.VITE_API_KEY as string;
     const request = await fetch(`${API}/loans`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "api-key": `${API_KEY}`,
       },
       credentials: "include",
     });
@@ -135,12 +131,10 @@ const userAuth = create<UserAuthProps>((set) => ({
   },
   GetSingleUserLoan: async (Email) => {
     const API = import.meta.env.VITE_BACKEND_URL as string;
-    const API_KEY = import.meta.env.VITE_API_KEY as string;
     const request = await fetch(`${API}/loans/${Email}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "api-key": `${API_KEY}`,
       },
       credentials: "include",
     });
@@ -153,12 +147,10 @@ const userAuth = create<UserAuthProps>((set) => ({
   },
   DeleteLoan: async (loanId) => {
     const API = import.meta.env.VITE_BACKEND_URL as string;
-    const API_KEY = import.meta.env.VITE_API_KEY as string;
     const request = await fetch(`${API}/deleteloan`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "api-key": `${API_KEY}`,
       },
       body: JSON.stringify({ loanId }),
       credentials: "include",
@@ -172,12 +164,10 @@ const userAuth = create<UserAuthProps>((set) => ({
   },
   GetAllExpiredLoan: async () => {
     const API = import.meta.env.VITE_BACKEND_URL as string;
-    const API_KEY = import.meta.env.VITE_API_KEY as string;
     const request = await fetch(`${API}/expiredloans`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "api-key": `${API_KEY}`,
       },
       credentials: "include",
     });
